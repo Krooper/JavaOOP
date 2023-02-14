@@ -7,9 +7,7 @@ public class BevVendingMachine implements VendingMachine {
     private ArrayList<Product> bevs = new ArrayList<>();
 
     public void initProducts(ArrayList<Product> someBevs) {
-        for (Product someBev : someBevs) {
-            bevs.add(someBev);
-        }
+        bevs.addAll(someBevs);
     }
 
     @Override

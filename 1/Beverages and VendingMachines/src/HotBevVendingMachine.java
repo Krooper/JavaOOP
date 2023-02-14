@@ -7,9 +7,7 @@ public class HotBevVendingMachine extends BevVendingMachine {
     private ArrayList<Product> hotBevs = new ArrayList<>();
 
     public void initProducts(ArrayList<Product> someBevs) {
-        for (Product someBev : someBevs) {
-            hotBevs.add(someBev);
-        }
+        hotBevs.addAll(someBevs);
     }
 
     @Override
