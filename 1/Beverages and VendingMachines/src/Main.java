@@ -49,5 +49,17 @@ public class Main {
         // мы получим тот результат, который и ожидаем.
         System.out.println(someHotBevMachine.getProduct("Americano", 300, 80));
 
+
+        // Создадим экземпляр итератора и вызовем его методы
+        BevIterator HotBevIterator = new BevIterator(someHotBevMachine);
+
+        // Пройдемся по всем напиткам в аппарате
+        for (Product bev : someHotBevMachine.getProducts()){
+            System.out.println(HotBevIterator.next());
+        }
+        // Видим, что последним выводится null
+        // Видим, что и метод hasNext() также выводит false
+        System.out.println(HotBevIterator.hasNext());
+
     }
 }

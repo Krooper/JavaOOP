@@ -4,6 +4,10 @@ import java.util.List;
 
 public class BevVendingMachine implements VendingMachine {
 
+    public ArrayList<Product> getProducts() {
+        return bevs;
+    }
+
     private ArrayList<Product> bevs = new ArrayList<>();
 
     public void initProducts(ArrayList<Product> someBevs) {

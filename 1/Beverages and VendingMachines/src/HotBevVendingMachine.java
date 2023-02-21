@@ -10,6 +10,10 @@ public class HotBevVendingMachine extends BevVendingMachine {
         hotBevs.addAll(someBevs);
     }
 
+    public ArrayList<Product> getProducts() {
+        return hotBevs;
+    }
+
     @Override
     public String getProduct(String name) {
         return "We have different options for " + name + ". Please choose precisely!";

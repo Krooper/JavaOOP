@@ -7,6 +7,8 @@ public interface VendingMachine {
 
     void initProducts(ArrayList<Product> someProducts);
 
+    ArrayList<Product> getProducts();
+
     String getProduct(String name);
 
     String getProduct(String name, int volume);
