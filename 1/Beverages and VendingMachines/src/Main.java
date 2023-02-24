@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class Main {
             }
         }
         // У нас есть класс BevVendingMachine, который соотв. интерфейсу VendingMachine. Создадим сначала его экземпляр
-        BevVendingMachine someBevMachine = new BevVendingMachine();
+        BevVendingMachine<Product> someBevMachine = new BevVendingMachine<>();
         someBevMachine.initProducts(hotBevs);
 
         // При попытке вызвать метод только по имени, он скажет, что надо запрашивать по-другому
@@ -35,7 +34,7 @@ public class Main {
 
         System.out.println();
 
-        HotBevVendingMachine someHotBevMachine = new HotBevVendingMachine();
+        HotBevVendingMachine<Product> someHotBevMachine = new HotBevVendingMachine<>();
         someHotBevMachine.initProducts(hotBevs);
 
         // При попытке вызвать метод только по имени, он скажет, что надо запрашивать по-другому
@@ -51,7 +50,7 @@ public class Main {
 
 
         // Создадим экземпляр итератора и вызовем его методы
-        BevIterator HotBevIterator = new BevIterator(someHotBevMachine);
+        BevIterator<VendingMachine<Product>, Product> HotBevIterator = new BevIterator<>(someHotBevMachine);
 
         // Пройдемся по всем напиткам в аппарате
         for (Product bev : someHotBevMachine.getProducts()){
