@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class BevIterator implements Iterator<Product> {
+public class BevIterator<O extends VendingMachine<T>, T extends Product> implements Iterator<T> {
 
     private int counter;
-    private final ArrayList<Product> beverages;
+    private final ArrayList<T> beverages;
 
-    public BevIterator(VendingMachine VendMachine) {
+    public BevIterator(O VendMachine) {
         this.counter = 0;
         this.beverages = VendMachine.getProducts();
     }
@@ -17,7 +17,7 @@ public class BevIterator implements Iterator<Product> {
     }
 
     @Override
-    public Product next() {
+    public T next() {
         if (!hasNext()) {
             return null;
         }

@@ -1,16 +1,14 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
-public class HotBevVendingMachine extends BevVendingMachine {
+public class HotBevVendingMachine<T extends Product> extends BevVendingMachine<T> {
 
-    private ArrayList<Product> hotBevs = new ArrayList<>();
+    private ArrayList<T> hotBevs = new ArrayList<T>();
 
-    public void initProducts(ArrayList<Product> someBevs) {
-        hotBevs.addAll(someBevs);
+    public void initProducts(ArrayList<T> someBevs) {
+        this.hotBevs = someBevs;
     }
 
-    public ArrayList<Product> getProducts() {
+    public ArrayList<T> getProducts() {
         return hotBevs;
     }
 

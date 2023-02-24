@@ -1,13 +1,10 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-public interface VendingMachine {
+public interface VendingMachine<T extends Product> {
 
-    void initProducts(ArrayList<Product> someProducts);
+    void initProducts(ArrayList<T> someProducts);
 
-    ArrayList<Product> getProducts();
+    ArrayList<T> getProducts();
 
     String getProduct(String name);
 
