@@ -1,6 +1,5 @@
 package service;
 
-import service.Parsers;
 import source.CharSource;
 
 import java.util.*;
@@ -8,7 +7,7 @@ import java.util.*;
 // Отдельный класс "запрос для магазина" - для преобразования запроса пользователя в запрос для магазина.
 // Включает в себя все критерии и характеристики, выбранные пользователем.
 // В случае же, если пользователь не выбрал критериев, добавляет все критерии.
-public class ShopRequest {
+public class SearchService {
     private ArrayList<String> brands = new ArrayList<>();
     public ArrayList<String> getBrands() {
         return brands;

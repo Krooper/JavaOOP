@@ -1,3 +1,7 @@
+package model;
+
+import service.Parsers;
+
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
@@ -113,11 +117,11 @@ public class User {
     }
 
     // Поле и его методы для обработки фильтра по запросу пользователя
-    private Filter filter;
-    public Filter getFilter() {
+    private Search filter;
+    public Search getFilter() {
         return filter;
     }
-    public void setFilter(Filter filter) {
+    public void setFilter(Search filter) {
         this.filter = filter;
     }
 

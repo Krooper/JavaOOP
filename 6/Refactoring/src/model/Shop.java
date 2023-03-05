@@ -1,4 +1,6 @@
-import model.Notebook;
+package model;
+
+import service.SearchService;
 
 import java.util.*;
 
@@ -29,9 +31,9 @@ public class Shop {
     // Поле request, являющееся отдельным классом, для обработки запроса от пользователя.
     // В реальности, наверное, это должен быть список запросов (для хранения истории),
     // но тут для примера пусть будет только один.
-    private ShopRequest request;
+    private SearchService request;
     public void setRequest(HashMap<String, String> filter) {
-        ShopRequest newRequest = new ShopRequest();
+        SearchService newRequest = new SearchService();
         newRequest.setUserRequest(filter);
 
         if (newRequest.getBrands().size() == 0) {
@@ -60,7 +62,7 @@ public class Shop {
         }
         this.request = newRequest;
     }
-    public ShopRequest getRequest() {
+    public SearchService getRequest() {
         return request;
     }
 

@@ -1,3 +1,7 @@
+package model;
+
+import source.CharSource;
+
 import java.util.HashMap;
 
 public class Notebook {
@@ -171,7 +175,7 @@ public class Notebook {
     @Override
     public String toString() {
 
-        return "Notebook " + id + ":\n" +
+        return "model.Notebook " + id + ":\n" +
                 "\t" + "Brand: " +
                 brand + "\n" +
                 "\t" + "Ram: " +
