@@ -1,3 +1,5 @@
+package service;
+
 public class Parsers {
     // Небольшой класс для парсинга со статическими методами.
     public static boolean tryParseInt(String str) {

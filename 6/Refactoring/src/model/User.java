@@ -1,3 +1,7 @@
+package model;
+
+import service.Parsers;
+
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
@@ -55,6 +59,14 @@ public class User {
         }
         this.requestedCriteria = requestedCriteria;
     }
+    // Печать критериев, по которым пользователь хочет проводить фильтрацию.
+    public void printCriteria(){
+        System.out.println("Your criteria list:");
+        for (int key : requestedCriteria.keySet()) {
+            System.out.println(requestedCriteria.get(key));
+        }
+        System.out.println();
+    }
 
     // Поле с конкретными характеристиками, по которым пользователь хочет фильтровать
     public HashMap<String, String> requestedChars;
@@ -104,12 +116,14 @@ public class User {
         this.requestedChars = reqChars;
     }
 
-    // Печать критериев, по которым пользователь хочет проводить фильтрацию.
-    public void printCriteria(){
-        System.out.println("Your criteria list:");
-        for (int key : requestedCriteria.keySet()) {
-            System.out.println(requestedCriteria.get(key));
-        }
-        System.out.println();
+    // Поле и его методы для обработки фильтра по запросу пользователя
+    private Search filter;
+    public Search getFilter() {
+        return filter;
     }
+    public void setFilter(Search filter) {
+        this.filter = filter;
+    }
+
+
 }

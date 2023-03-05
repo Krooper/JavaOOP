@@ -1,9 +1,13 @@
+package service;
+
+import source.CharSource;
+
 import java.util.*;
 
 // Отдельный класс "запрос для магазина" - для преобразования запроса пользователя в запрос для магазина.
 // Включает в себя все критерии и характеристики, выбранные пользователем.
 // В случае же, если пользователь не выбрал критериев, добавляет все критерии.
-public class ShopRequest {
+public class SearchService {
     private ArrayList<String> brands = new ArrayList<>();
     public ArrayList<String> getBrands() {
         return brands;
@@ -128,5 +132,95 @@ public class ShopRequest {
         this.colours = colours;
         this.inStocks = inStocks;
         this.maxPrice = maxPrice;
+    }
+
+    public void printRequest() {
+        System.out.println();
+
+        StringBuilder outStr = new StringBuilder();
+        outStr.append("Brands:\n");
+        if (this.getBrands().size() == CharSource.brands.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (String brand : this.getBrands()) {
+                outStr.append("\t").append(brand).append("\n");
+            }
+        }
+
+        outStr.append("Rams, Gb:\n");
+        if (this.getRams().size() == CharSource.rams.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (int ram : this.getRams()) {
+                outStr.append("\t").append(ram).append("\n");
+            }
+        }
+
+        outStr.append("Roms, Gb:\n");
+        if (this.getRoms().size() == CharSource.roms.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (int rom : this.getRoms()) {
+                outStr.append("\t").append(rom).append("\n");
+            }
+        }
+
+        outStr.append("Processors:\n");
+        if (this.getProcs().size() == CharSource.procs.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (String proc : this.getProcs()) {
+                outStr.append("\t").append(proc).append("\n");
+            }
+        }
+
+        outStr.append("Screen sizes:\n");
+        if (this.getScreens().size() == CharSource.screenDiags.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (Double screen : this.getScreens()) {
+                outStr.append("\t").append(screen).append("\"").append("\n");
+            }
+        }
+
+        outStr.append("OS:\n");
+        if (this.getOss().size() == CharSource.oss.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (String os : this.getOss()) {
+                outStr.append("\t").append(os).append("\n");
+            }
+        }
+
+        outStr.append("Colours:\n");
+        if (this.getColours().size() == CharSource.colours.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (String colour : this.getColours()) {
+                outStr.append("\t").append(colour).append("\n");
+            }
+        }
+
+        outStr.append("In Stock:\n");
+        if (this.getInStocks().size() == CharSource.inStocks.length) {
+            outStr.append("\t").append("Any").append("\n");
+        } else {
+            for (Boolean colour : this.getInStocks()) {
+                if (colour) {
+                    outStr.append("\t").append("Yes").append("\n");
+                } else {
+                    outStr.append("\t").append("No").append("\n");
+                }
+            }
+        }
+
+        outStr.append("Max. price: ");
+        if (this.getMaxPrice() == 100_000_000) {
+            outStr.append("Any").append("\n");
+        } else {
+            outStr.append(this.getMaxPrice()).append(" RUB").append("\n");
+        }
+
+        System.out.println(outStr);
     }
 }
