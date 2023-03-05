@@ -55,6 +55,14 @@ public class User {
         }
         this.requestedCriteria = requestedCriteria;
     }
+    // Печать критериев, по которым пользователь хочет проводить фильтрацию.
+    public void printCriteria(){
+        System.out.println("Your criteria list:");
+        for (int key : requestedCriteria.keySet()) {
+            System.out.println(requestedCriteria.get(key));
+        }
+        System.out.println();
+    }
 
     // Поле с конкретными характеристиками, по которым пользователь хочет фильтровать
     public HashMap<String, String> requestedChars;
@@ -104,12 +112,14 @@ public class User {
         this.requestedChars = reqChars;
     }
 
-    // Печать критериев, по которым пользователь хочет проводить фильтрацию.
-    public void printCriteria(){
-        System.out.println("Your criteria list:");
-        for (int key : requestedCriteria.keySet()) {
-            System.out.println(requestedCriteria.get(key));
-        }
-        System.out.println();
+    // Поле и его методы для обработки фильтра по запросу пользователя
+    private Filter filter;
+    public Filter getFilter() {
+        return filter;
     }
+    public void setFilter(Filter filter) {
+        this.filter = filter;
+    }
+
+
 }

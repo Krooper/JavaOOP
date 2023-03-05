@@ -168,37 +168,27 @@ public class Notebook {
     }
 
     // Красивый вывод характеристик
-    public StringBuilder GetCharacteristics() {
-        StringBuilder outStr = new StringBuilder();
-        outStr.append("Notebook ").append(id).append(":\n");
+    @Override
+    public String toString() {
 
-        outStr.append("\t").append("Brand: ");
-        outStr.append(brand).append("\n");
-
-        outStr.append("\t").append("Ram: ");
-        outStr.append(ram).append(" Gb").append("\n");
-
-        outStr.append("\t").append("ROM: ");
-        outStr.append(rom).append(" Gb").append("\n");
-
-        outStr.append("\t").append("Processor Brand: ");
-        outStr.append(proc).append("\n");
-
-        outStr.append("\t").append("Screen Diagonal: ");
-        outStr.append(screenDiag).append("\"").append("\n");
-
-        outStr.append("\t").append("Operating System: ");
-        outStr.append(os).append("\n");
-
-        outStr.append("\t").append("Colour: ");
-        outStr.append(colour).append("\n");
-
-        outStr.append("\t").append("Price: ");
-        outStr.append(price).append("\n");
-
-        outStr.append("\t").append("In Stock: ");
-        outStr.append(inStock).append("\n");
-
-        return outStr;
+        return "Notebook " + id + ":\n" +
+                "\t" + "Brand: " +
+                brand + "\n" +
+                "\t" + "Ram: " +
+                ram + " Gb" + "\n" +
+                "\t" + "ROM: " +
+                rom + " Gb" + "\n" +
+                "\t" + "Processor Brand: " +
+                proc + "\n" +
+                "\t" + "Screen Diagonal: " +
+                screenDiag + "\"" + "\n" +
+                "\t" + "Operating System: " +
+                os + "\n" +
+                "\t" + "Colour: " +
+                colour + "\n" +
+                "\t" + "Price: " +
+                price + "\n" +
+                "\t" + "In Stock: " +
+                inStock + "\n";
     }
 }
