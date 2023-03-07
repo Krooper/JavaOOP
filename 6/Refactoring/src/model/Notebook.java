@@ -175,7 +175,7 @@ public class Notebook {
     @Override
     public String toString() {
 
-        return "model.Notebook " + id + ":\n" +
+        return "Notebook " + id + ":\n" +
                 "\t" + "Brand: " +
                 brand + "\n" +
                 "\t" + "Ram: " +
